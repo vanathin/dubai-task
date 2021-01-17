@@ -1,5 +1,5 @@
 # Microservice: consumer-producer-service
-This is a demo microservice for the consumer-producer-thread
+This is a demo microservice for the consumers-producers currently accessing atomic counter.
 
 ### Tech stack used:
 1. Java 8
