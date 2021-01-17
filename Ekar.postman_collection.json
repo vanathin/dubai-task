@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "da522390-fb80-4409-9d73-4a8e0d7d5a3e",
+		"name": "Ekar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "thread-counts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"producerCount\": 10,\n    \"consumerCount\": 10\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/thread-counts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"thread-counts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set-Counter",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"counterValue\" : 50\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/counter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"counter"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

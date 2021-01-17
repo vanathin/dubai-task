@@ -1,0 +1,36 @@
+version: '3.7'
+services:
+  ekar-mysql:
+    image: mysql:8.0
+    networks:
+      - ekar-mysql-network
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=ekardb
+      - MYSQL_USER=sa
+      - MYSQL_PASSWORD=password
+    ports:
+      - "3306:3306"
+    container_name: ekar-mysql
+  ekar-producer-consumer-service:
+    build: ./
+    image: ekar/producer-consumer-service:1.0.0
+    networks:
+      - ekar-mysql-network
+    restart: on-failure
+    depends_on:
+      - ekar-mysql
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_HOST=ekar-mysql
+      - DATABASE_USER=sa
+      - DATABASE_PASSWORD=password
+      - DATABASE_NAME=ekardb
+      - DATABASE_PORT=3306
+    container_name: ekar-producer-consumer-service
+
+networks:
+  ekar-mysql-network:
+    driver: bridge

@@ -1,0 +1,18 @@
+springdoc:
+  default-produces-media-type: application/json
+  swagger-ui:
+    disable-swagger-default-url: true
+
+server:
+  port: ${PORT:8080}
+  tomcat:
+    accesslog:
+      enabled: true
+
+app:
+  counterUpperBound: 100
+  counterLowerBound: 0
+  producerPrefix: Producer-
+  consumerPrefix: Consumer-
+  consumerProcessingTime: 50
+  producerProcessingTime: 50
