@@ -11,14 +11,15 @@ This is a demo microservice for the consumers-producers currently accessing atom
 8. TDD approach using JUnit 5, Mockito, and Spring Boot Test
 10. Spring boot starter validation for request validation  
 
-### Steps to build and run the micro-service along with `MySQL` in containers using `docker compose`:
-##### Step 1: Enter the project directory, 
+### Steps to run micro-service along with `MySQL` as containers in docker using `docker compose`:
+##### Step 1: Open the terminal (or) Command Prompt
+##### Step 2: Enter the project directory, 
     cd <project_directory>
 
-##### Step 2: To clean and package the micro-service locally
+##### Step 3: To clean and package the micro-service locally
     mvnw clean package
 
-##### Step 3: Use `docker compose` to build and run the both MySQL & micro-service as a docker containers:
+##### Step 4: Use `docker compose` to build and run the both MySQL & micro-service as a docker containers:
     docker-compose up --build
 Note: Above docker compose command will run the containers namely,
    1. `ekar-mysql` container for mysql and its port is `3306`
@@ -26,7 +27,8 @@ Note: Above docker compose command will run the containers namely,
 
 ---
 
-### OpenAPI 3.0 Documentation URL: 
+### OpenAPI 3.0 Documentation URL:
+
 http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config  
 ![API_Documentation img missing](https://raw.githubusercontent.com/vanathin/ekar-producer-consumer-service/main/img/swagger-ui.jpg)
 Note: Also [Postman Collection](https://raw.githubusercontent.com/vanathin/ekar-producer-consumer-service/main/Ekar.postman_collection.json) has been pushed into the repository for your reference.
@@ -36,22 +38,23 @@ Note: Also [Postman Collection](https://raw.githubusercontent.com/vanathin/ekar-
 ### MySQL Database CLI to verify the transaction information:
 ##### Prerequisite: 
 Docker has to be there on the host machine
-##### Step 1: Connect to `ekar-mysql` container using docker cli command, 
+##### Step 1: Open a new terminal (or) new Command Prompt (without disturbing the earlier one)
+##### Step 2: Connect to `ekar-mysql` container using docker cli command, 
     docker exec -it ekar-mysql /bin/bash
-##### Step 2: Connect to mysql server
+##### Step 3: Connect to mysql server
     mysql -usa -ppassword -h localhost -P3306
-##### Step 3: display all the available databases,
+##### Step 4: display all the available databases,
     show databases;
-##### Step 4: switch to ekardb
+##### Step 5: switch to ekardb
     use ekardb;
-##### Step 5: list all the available tables
+##### Step 6: list all the available tables
     show tables;
-##### Step 6: Run the select queries to verify the data
+##### Step 7: Run the select queries to verify the data
     select * from request_log; select * from counter_log;
 Note: Preserve this state until you complete your testing.
-##### Step 7: exit from mysql cli
+##### Step 8: exit from mysql cli
     exit
-##### Step 8: exit from container
+##### Step 9: exit from container
     exit
 
 ![MySQL CLI Output](https://raw.githubusercontent.com/vanathin/ekar-producer-consumer-service/main/img/mysql_db_log.jpg)
