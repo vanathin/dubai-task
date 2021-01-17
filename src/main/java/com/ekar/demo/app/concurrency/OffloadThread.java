@@ -5,7 +5,6 @@ import com.ekar.demo.app.concurrency.producer.ProducerJob;
 import com.ekar.demo.app.config.AppProperties;
 import com.ekar.demo.app.entity.CounterLog;
 import com.ekar.demo.app.repository.CounterLogRespository;
-import com.ekar.demo.app.service.ProducerConsumerService;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;

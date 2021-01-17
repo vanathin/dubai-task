@@ -5,6 +5,7 @@ import com.ekar.demo.app.concurrency.ThreadPoolHolder;
 import com.ekar.demo.app.config.AppProperties;
 import com.ekar.demo.app.dto.SetCounterRequestDTO;
 import com.ekar.demo.app.dto.ThreadCountRequestDTO;
+import com.ekar.demo.app.entity.converter.EntityConverter;
 import com.ekar.demo.app.repository.CounterLogRespository;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
