@@ -6,7 +6,7 @@ This is a demo microservice for the consumers-producers currently accessing atom
 2. Spring Boot 2.4.1
 3. Spring REST API (Spring Web)
 4. Lombok 1.18.16
-5. Spring Data JPA & MySQL
+5. Spring Data JPA & MySQL-8
 7. Dockerized (docker-compose.yml and Dockerfile is included)
 8. TDD approach using JUnit 5, Mockito, and Spring Boot Test
 10. Spring boot starter validation for request validation  
