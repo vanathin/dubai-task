@@ -19,7 +19,7 @@ This is a demo microservice for the consumers-producers currently accessing atom
 ##### Step 3: To clean and package the micro-service locally
     mvnw clean package
 
-##### Step 4: Use `docker compose` to build and run the both MySQL & micro-service as a docker containers:
+##### Step 4: Use `docker compose` to build and run both MySQL & micro-service as a docker containers:
     docker-compose up --build
 Note: Above docker compose command will run the containers namely,
    1. `ekar-mysql` container for mysql and its port is `3306`
