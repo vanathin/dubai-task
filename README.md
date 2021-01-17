@@ -21,14 +21,18 @@ This is a demo microservice for the consumer-producer-thread
 ##### Step 3: Use `docker compose` to build and run the both MySQL & micro-service as a docker containers:
     docker-compose up --build
 Note: Above docker compose command will run the containers namely,
-   1. `ekar-mysql` container for mysql
-   2. `ekar-producer-consumer-service` container for microservice
-
-####
-
-Note: Also [Postman Collection]() has been pushed into the repository for your reference.
+   1. `ekar-mysql` container for mysql and its port is `3306`
+   2. `ekar-producer-consumer-service` container for microservice and its port is `8080`
 
 ---
+
+### OpenAPI 3.0 Documentation URL: 
+http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config  
+![API_Documentation img missing](https://raw.githubusercontent.com/vanathin/ekar-producer-consumer-service/main/img/swagger-ui.jpg)
+Note: Also [Postman Collection](https://raw.githubusercontent.com/vanathin/ekar-producer-consumer-service/main/Ekar.postman_collection.json) has been pushed into the repository for your reference.
+
+---
+
 ### MySQL Database CLI to verify the transaction information:
 ##### Prerequisite: 
 Docker has to be there on the host machine
@@ -50,8 +54,20 @@ Note: Preserve this state until you complete your testing.
 ##### Step 8: exit from container
     exit
 
-   
-![H2_DB_Console img missing]()
+![MySQL CLI Output](https://raw.githubusercontent.com/vanathin/ekar-producer-consumer-service/main/img/mysql_db_log.jpg)
 
+---
+
+
+### Program outputs
+
+#### Less consumers and more producers
+![Less consumers and more producers](https://raw.githubusercontent.com/vanathin/ekar-producer-consumer-service/main/img/More_Producer_Less_Consumer.JPG)
+
+#### More consumers and less producers
+![More consumers and less producers](https://raw.githubusercontent.com/vanathin/ekar-producer-consumer-service/main/img/Less_Producer_More_Consumer.JPG)
+
+#### Equal consumers and producers
+![Equal consumers and producers](https://raw.githubusercontent.com/vanathin/ekar-producer-consumer-service/main/img/Equal_Producer_Consumer.JPG)
 
 ---
