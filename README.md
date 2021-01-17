@@ -11,7 +11,7 @@ This is a demo microservice for the consumer-producer-thread
 8. TDD approach using JUnit 5, Mockito, and Spring Boot Test
 10. Spring boot starter validation for request validation  
 
-### Steps to build the Docker Image:
+### Steps to build and run the micro-service along with mysql using docker compose:
 ##### Step 1: Enter the project directory, 
     cd <project_directory>
 
