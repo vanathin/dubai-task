@@ -18,13 +18,13 @@ public class Logging {
     private final EntityConverter entityConverter;
 
     @Before("execution(* com.ekar.demo.app.controller.ProducerConsumerController.increaseThreadCount(..))")
-    public void before(JoinPoint jointpoint){
+    public void before(JoinPoint jointpoint) {
         Object[] obj = jointpoint.getArgs();
-        for(Object o : obj){
-            ThreadCountRequestDTO requestDTO = (ThreadCountRequestDTO)o;
-            if(requestDTO != null) {
+        for (Object o : obj) {
+            ThreadCountRequestDTO requestDTO = (ThreadCountRequestDTO) o;
+            if (requestDTO != null) {
                 requestLogRepository.save(entityConverter.convert(requestDTO));
-            }else {
+            } else {
                 break;
             }
         }

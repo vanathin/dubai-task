@@ -32,7 +32,7 @@ public class OffloadThread extends Thread {
                     || counter.get() >= appProperties.getCounterUpperBound()) {
                 final LocalDateTime localDateTime = LocalDateTime.now();
                 poolHolder.terminate();
-                if(!rejected.get()) {
+                if (!rejected.get()) {
                     counterLogRespository.save(CounterLog.builder()
                             .message(String.format("Counter value: %s", counter.get()))
                             .transactionDateTime(localDateTime)

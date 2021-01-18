@@ -12,6 +12,7 @@ import static com.ekar.demo.app.service.ProducerConsumerService.counter;
 public class ProducerJob implements Runnable {
 
     private final AppProperties appProperties;
+
     @SneakyThrows
     @Override
     public void run() {

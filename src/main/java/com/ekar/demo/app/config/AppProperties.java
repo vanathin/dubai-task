@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Getter
 @Setter
-@ConfigurationProperties(prefix="app")
+@ConfigurationProperties(prefix = "app")
 @Configuration
 public class AppProperties {
     private int counterUpperBound;

@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Getter
 @ToString
 @Builder
-@Table(name="request_log")
+@Table(name = "request_log")
 @Entity
 public class ThreadCountRequestLog {
     @Id

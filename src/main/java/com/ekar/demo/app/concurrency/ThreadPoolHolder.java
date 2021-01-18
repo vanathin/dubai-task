@@ -14,17 +14,12 @@ public class ThreadPoolHolder {
     private final ExecutorService producers;
     private final ExecutorService consumers;
 
-    public void terminate() {
-        gracefulTermination(producers, "Producer");
-        gracefulTermination(consumers, "Consumer");
-    }
-
     private static void gracefulTermination(final ExecutorService executor, final String type) {
         if (!executor.isShutdown()) {
             log.debug("{} Termination initiated...", type);
             executor.shutdown();
             try {
-                if(!executor.awaitTermination(100, TimeUnit.MILLISECONDS)) {
+                if (!executor.awaitTermination(100, TimeUnit.MILLISECONDS)) {
                     executor.shutdownNow();
                 } else {
                     log.debug("{} Termination Completed.", type);
@@ -33,5 +28,10 @@ public class ThreadPoolHolder {
                 executor.shutdownNow();
             }
         }
+    }
+
+    public void terminate() {
+        gracefulTermination(producers, "Producer");
+        gracefulTermination(consumers, "Consumer");
     }
 }

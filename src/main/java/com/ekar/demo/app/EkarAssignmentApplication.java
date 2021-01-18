@@ -11,9 +11,9 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 @EnableConfigurationProperties(AppProperties.class)
 public class EkarAssignmentApplication {
 
-	public static void main(String[] args) {
-		log.debug("No. of CPU cores: {}", Runtime.getRuntime().availableProcessors());
-		SpringApplication.run(EkarAssignmentApplication.class, args);
-	}
+    public static void main(String[] args) {
+        log.debug("No. of CPU cores: {}", Runtime.getRuntime().availableProcessors());
+        SpringApplication.run(EkarAssignmentApplication.class, args);
+    }
 
 }
