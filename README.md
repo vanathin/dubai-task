@@ -3,7 +3,7 @@ This is a demo microservice for the consumers-producers currently accessing atom
 
 ### Tech stack used:
 1. Java 8
-2. Spring Boot 2.4.1
+2. Spring Boot 2.4.2
 3. Spring REST API (Spring Web)
 4. Lombok 1.18.16
 5. Spring Data JPA & MySQL-8
