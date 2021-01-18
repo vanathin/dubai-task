@@ -43,18 +43,18 @@ Docker has to be there on the host machine
     docker exec -it ekar-mysql /bin/bash
 ##### Step 3: Connect to mysql server
     mysql -usa -ppassword -h localhost -P3306
-##### Step 4: display all the available databases,
+##### Step 4: Display all the available databases,
     show databases;
-##### Step 5: switch to ekardb
+##### Step 5: Switch to ekardb
     use ekardb;
-##### Step 6: list all the available tables
+##### Step 6: List all the available tables
     show tables;
 ##### Step 7: Run the select queries to verify the data
     select * from request_log; select * from counter_log;
 Note: Preserve this state until you complete your testing.
-##### Step 8: exit from mysql cli
+##### Step 8: Exit from the mysql cli
     exit
-##### Step 9: exit from container
+##### Step 9: Exit from the mysql container
     exit
 
 ![MySQL CLI Output](https://raw.githubusercontent.com/vanathin/ekar-producer-consumer-service/main/img/mysql_db_log.jpg)
