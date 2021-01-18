@@ -1,4 +1,3 @@
-
 #H2 InMemory Database
 spring:
   datasource:

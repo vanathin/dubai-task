@@ -29,7 +29,7 @@ class ProducerConsumerControllerTest {
     @Test
     @SneakyThrows
     public void testIncreaseThreadCount() {
-         ThreadCountRequestDTO countRequest = ThreadCountRequestDTO.builder()
+        ThreadCountRequestDTO countRequest = ThreadCountRequestDTO.builder()
                 .consumerCount(2)
                 .producerCount(5)
                 .build();
@@ -42,7 +42,7 @@ class ProducerConsumerControllerTest {
                 .content(TestHelper.asJsonString(ThreadCountRequestDTO.builder()
                         .consumerCount(2)
                         .producerCount(5)
-                       .build())
+                        .build())
                 ))
                 .andExpect(status().isCreated());
 

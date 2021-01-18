@@ -31,6 +31,7 @@ public class ProducerConsumerService {
 
     @SneakyThrows
     public void doCountIncrementDecrement(final ThreadCountRequestDTO request) {
+        validateCounterState();
         checkAndShutdownExistingGracefully();
 
         poolHolder = ThreadPoolHolder.builder()
@@ -43,6 +44,15 @@ public class ProducerConsumerService {
         final Thread offloadThread = new OffloadThread(poolHolder, appProperties, counterLogRespository);
         offloadThread.setName("OffloadParentThread");
         offloadThread.start();
+    }
+
+    private void validateCounterState() {
+        Optional.of(counter)
+                .filter(ct -> ct.get() <= appProperties.getCounterLowerBound()
+                        || ct.get() >= appProperties.getCounterUpperBound())
+                .ifPresent(ct -> {
+                    throw new RuntimeException(String.format("Counter has reached its limit, value is %s. Try resetting it.", ct));
+                });
     }
 
     @SuppressWarnings("BusyWait")
